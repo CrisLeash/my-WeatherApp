@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How's the weather, bro?</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">  
+    <link rel="stylesheet" type="text/css" href="src/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body> 
+    <div class="container">
+        <div class="row">
+             <h1>How's da <em>weada</em>, bro?
+            </h1>
+                 <div class="col-4">
+                    <h2 class="name" id="h2Temp"> 15
+                    </h2>
+                    <h2 class="celcius"><a href="">°C
+                    </a></h2>
+                    <h2 class="farenheit"><a href="">°F
+                    </a></h2>
+                  </div>
+                    <div class="col-2 current_icon">
+                      <h2 id="icon">  🌤 
+                      </h2>
+                    </div>
+                        <div class="col-6 current_time">
+                          <span class="week_day" id="weekDay">
+                        Monday
+                        </span>
+                        <span class="date_day" id="dateDayMonth">
+                        16/10
+                        </span>
+                        <span class="time" id="actualTime">
+                        14:00 
+                        </span>
+                    </div>
+            <div class="col-4 current_place">
+              <span class="city" id="currentCity">Pula</span>
+              </br>
+              <span class="humidity">Humidity %<span id="humidity">20</span></span>
+            </br>
+              <span class="wind">Wind Speed <span id="wind">2</span></span>
+           </div>
+      <div class="col-8 search_place">
+        <button class="buttonCurrentPlace" id="buttonCurrentPlace"><em>EXACT</em> LOCATION</button>
+        <form id="inputTextCity">
+          <input type="text city" placeholder="Enter a city" id="enterCity" />
+          <input id="citySubmit" type="submit" class="bnt btn-primary" value="CHANGE CITY"/>
+        </form>
+        </div>
+      </div>
+   </div>  
+
+  <div class="container next_days">
+      <div class="row next_days">
+          <div class="col scnd_day">
+                  <div class="Scnd_week">Sat</div>
+                  <div class="Scnd_date">17/11</div>
+                  <div class="Scnd_icon">☀</div>
+                  <div class="Scnd_temperature">17°</div>
+          </div>
+          <div class="col thrd_day">
+              <div class="thrd_week">Sat</div>
+              <div class="thrd_date">17/11</div>
+              <div class="thrd_icon">☀</div>
+              <div class="thrd_temperature">17°</div>
+              </div>
+          <div class="col forth_day">
+              <div class="forth_week">Sat</div>
+              <div class="forth_date">17/11</div>
+              <div class="forth_icon">☀</div>
+              <div class="forth_temperature">17°</div>
+          </div>
+          <div class="col fifth_day">
+              <div class="fifth_week">Sat</div>
+              <div class="fifth_date">17/11</div>
+              <div class="fifth_icon">☀</div>
+              <div class="fifth_temperature">17°</div>
+          </div> 
+          <div class="col sixth_day">
+              <div class="sixth_week">Sat</div>
+              <div class="sixth_date">17/11</div>
+              <div class="sixth_icon">☀</div>
+              <div class="sixth_temperature">17°</div>
+          </div> 
+      </div>
+  </div>
+  <script src="src/script.js"></script>
+  </body>
+</html>

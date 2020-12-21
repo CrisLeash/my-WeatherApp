@@ -1,0 +1,151 @@
+  h1 {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 10px 40px 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Sigmar One', cursive;
+    font-weight: lighter;
+  }
+  h2 {
+    display: inline;
+    color: #6fd5d2;
+    font-size: 80px;
+  }
+  h2.icon {
+   
+    text-align: left;
+  }
+  a {
+    color: #6fd5d2;
+  }
+  .celcius {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 5px;
+  }
+
+  .farenheit{
+    font-size: 25px;
+    font-weight: lighter;
+    padding: 5px;
+  }
+
+  .row {
+    max-width: 60%;
+  }
+  
+  .col .current_time {
+    display: block;
+    text-align: right;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .city {
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  
+  .humidity,
+  .wind {
+    font-size: 20px;
+  }
+ 
+  .time,
+  #actualtime,
+  #weekDay,
+  #dateDayMonth
+{
+    display: block;
+    font-size: 20px;
+    position: relative;
+    font-weight: bold;
+    box-align: left;
+    color: #000;
+  }
+  
+  .scnd_day,
+  .thrd_day,
+  .forth_day,
+  .fifth_day,
+  .sixth_day {
+    display: block;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+  }
+
+  .Scnd_temperature,
+  .thrd_temperature,
+  .forth_temperature,
+  .fifth_temperature,
+  .sixth_temperature {
+    font-size: 25px;
+  }
+  
+  .row .next_days {
+    display: inline;
+  }
+  .buttonCurrentPlace {
+    background-color: #6fd5d2; 
+    font-weight: lighter;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 3px 5px rgba(101, 82, 150, 0.5);
+    border-color: #6fd5d2 ;
+    margin-bottom: 30px;
+    width: 400px;
+    font-weight: bold;
+    max-width: 50%;
+    
+  }
+
+  .buttonCurrentPlace:hover {
+    background-color: white;
+    color: #6fd5d2;
+    border-color: #6fd5d2;
+  }
+
+  .bnt {
+    background-color: #6fd5d2; 
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 3px 5px rgba(101, 82, 150, 0.5);
+    border-color: #6fd5d2 ;
+
+  }
+ 
+  input {
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn-primary:hover
+  {
+    background-color: white;
+    color: #6fd5d2;
+    border-color: #6fd5d2;
+  }
+
+  .container .next_days {
+    background-color: #6fd5d2;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 3px 5px rgba(101, 82, 150, 0.5);
+  }
+
+  .current_time {
+    text-align: right;
+  }
+
+  p {display: inline;
+  color:white;}
+
+  span {
+    padding: 10px;
+  }
+
