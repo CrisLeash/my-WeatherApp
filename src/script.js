@@ -5,17 +5,19 @@ function textCity(event) {
     let showName = document.querySelector("#currentCity");
     let temperature = document.querySelector("#h2Temp");
     let humidity = document.querySelector("#humidity");
+    let feelsLike = document.querySelector("#feelsLike");
     let wind = document.querySelector("#wind");
     let units = "metric";
     let apiKey = "05905c132e5fe49110e5269479bec0c0";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&units=${units}`;
     
     axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature => {
-        showName.innerHTML = showTemperature.data.name;
         console.log(showTemperature);
+        showName.innerHTML = showTemperature.data.name;
         temperature.innerHTML = Math.round(showTemperature.data.main.temp);
         humidity.innerHTML = showTemperature.data.main.humidity;
         wind.innerHTML = showTemperature.data.wind.speed;
+        feelsLike.innerHTML = Math.rouond(showTemperature.data.main.feels_like);
     });
     
 }
@@ -25,8 +27,10 @@ function textCity(event) {
     function myLocation(position){
         function showCurrentLocation(temp) {
             document.querySelector("#currentCity").innerHTML = temp.data.name;
+            document.querySelector("#humidity").innerHTML = temp.data.main.humidity;
+            document.querySelector("#wind").innerHTML = temp.data.wind.speed;
+            document.querySelector("#feelsLike").innerHTML = (Math.round(temp.data.main.feels_like));
             document.querySelector("#h2Temp").innerHTML = (Math.round(temp.data.main.temp));
-            
         }
         let lat = (position.coords.latitude);
         let lon = (position.coords.longitude);
