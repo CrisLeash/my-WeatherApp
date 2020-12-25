@@ -17,7 +17,7 @@ function textCity(event) {
         temperature.innerHTML = Math.round(showTemperature.data.main.temp);
         humidity.innerHTML = showTemperature.data.main.humidity;
         wind.innerHTML = showTemperature.data.wind.speed;
-        feelsLike.innerHTML = Math.rouond(showTemperature.data.main.feels_like);
+        feelsLike.innerHTML = Math.round(showTemperature.data.main.feels_like);
     });
     
 }
