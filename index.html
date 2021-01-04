@@ -13,58 +13,52 @@
   </head>
   <body> 
     <div class="container">
-        <div class="row">
-             <h1>How's da <em>weada</em>, bro?
-            </h1>
-                 <div class="col-4">
-                    <h2 class="name" id="h2Temp"> 15
-                    </h2>
-                    <h2 class="celcius"><a href="">°C
-                    </a></h2>
-                    <h2 class="farenheit"><a href="">°F
-                    </a></h2>
-                  </div>
-                    <div class="col-2 current_icon" 
-                    id="icon">
-                      <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weatherIcon"/> 
-                    </div>
-                        <div class="col-6 current_time">
-                          <span class="week_day" id="weekDay">
-                        Monday
-                        </span>
-                        <div class="date_hours">
-                        <span class="date_day" id="dateDayMonth">
-                        16/10
-                        </span>
-                        <span class="time" id="actualTime">
-                        14:00 
-                        </span>
-                       
-                      </div>
-                      <button class="buttonCurrentPlace" id="buttonCurrentPlace"><em>EXACT</em> LOCATION</button>
-                    </div>
-                    
-            <div class="col-4 current_place">
-              <span class="city" id="currentCity">Pula</span>
-            <span class="feelsLike">Feels like<span id="feelsLike">10</span>°</span>
-          
-              <span class="humidity">Humidity<span id="humidity">20</span>%</span>
-        
-              <span class="wind">Wind Speed <span id="wind">2</span>m/s</span>
-           </div>
-           <span id="description"><em>Clear sunny sky</em></span>
-
-           
-      <div class="col-4 search_place">
-        <form id="inputTextCity">
-          <input type="text city" placeholder="Enter a city" id="enterCity" />
-          <input id="citySubmit" type="submit" class="bnt btn-primary" value="CHANGE CITY"/>
-        </form>
-        
+        <div class="row title">
+			<h1>How's da <em>weada</em>, bro?
+		</h1>
         </div>
-      </div>
-   </div>  
-
+        <div class="row">
+			<div class="col-4">
+				<h2 class="name" id="h2Temp"> 15
+				</h2>
+				<h2 class="celcius"><a href="">°C
+				</a></h2>
+				<h2 class="farenheit"><a href="">°F
+				</a></h2>
+				<div class="current_time">
+					
+					<span class="city" id="currentCity">Pula</span>
+					<span class="feelsLike">Feels like<span id="feelsLike">10</span>°</span>
+					<span class="humidity">Humidity<span id="humidity">20</span>%</span>
+					<span class="wind">Wind Speed <span id="wind">2</span>m/s</span>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="current_icon">
+					<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weatherIcon" id="icon"/> 
+				</div>
+				<span id="description"><em>Clear sunny sky</em></span>
+				<button class="buttonCurrentPlace" id="buttonCurrentPlace"><em>EXACT </em> LOCATION</button>
+			</div>
+			<div class="col-4 search_place">
+				<span class="week_day" id="weekDay">
+					Monday
+				</span>
+				<span class="date_day" id="dateDayMonth">
+					16/10
+				</span>
+				<div class="date_hours">
+					<span class="time" id="actualTime">
+						14:00 
+					</span>
+				</div>
+				<form id="inputTextCity">
+					<input type="text city" placeholder="Enter a city" id="enterCity" />
+					<input id="citySubmit" type="submit" class="bnt btn-primary" value="CHANGE CITY"/>
+				</form>
+			</div>
+  		 </div>  
+	</div>
   <div class="container next_days">
       <div class="row next_days">
           <div class="col scnd_day">
@@ -78,7 +72,7 @@
               <div class="thrd_date">17/11</div>
               <div class="thrd_icon">☀</div>
               <div class="thrd_temperature">17°</div>
-              </div>
+			</div>
           <div class="col forth_day">
               <div class="forth_week">Sat</div>
               <div class="forth_date">17/11</div>
