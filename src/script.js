@@ -63,10 +63,10 @@ let days =
  "Saturday"];
 let currentTimeWeek = document.querySelector("#weekDay");
 currentTimeWeek.innerHTML = days[now.getDay()];
-let actualMonth = now.getMonth(); 
+let actualMonth = now.getMonth()+1;
 let actualDay = now.getDate();
 let currentDateDay = document.querySelector("#dateDayMonth");
-currentDateDay.innerHTML = `${actualDay} / ${actualMonth}`;
+currentDateDay.innerHTML = `0${actualDay} / 0${actualMonth}`;
 let actualHours = now.getHours();
 let actualMinutes = now.getMinutes();
 let currentHoursMinutes = document.querySelector("#actualTime");
