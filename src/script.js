@@ -39,6 +39,7 @@ function textCity(event) {
             document.querySelector("#h2Temp").innerHTML = (Math.round(temp.data.main.temp));
             document.querySelector("#icon").innerHTML = ("src" , `http://openweathermap.org/img/wn/${iconNumber}@2x.png`);
         }
+        
         let lat = (position.coords.latitude);
         let lon = (position.coords.longitude);
         let units = "metric";
@@ -91,3 +92,8 @@ currentHoursMinutes.innerHTML = `${actualHours >= 10 ? actualHours : `0` + actua
 //     currentDateDay.innerHTML = `${actualDay} / 0 ${actualMonth}`;
 // }
 
+
+
+// let farenheit = document.querySelector("#farenheit");
+   //    addEventListener("click", showFarenheit);
+    
