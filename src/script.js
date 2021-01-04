@@ -10,7 +10,9 @@ function textCity(event) {
     let units = "metric";
     let apiKey = "05905c132e5fe49110e5269479bec0c0";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&units=${units}`;
-    
+    let weatherIcon = document.querySelector("#icon");
+    let description = document.querySelector("#description");
+
     axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature => {
         console.log(showTemperature);
         showName.innerHTML = showTemperature.data.name;
@@ -18,11 +20,14 @@ function textCity(event) {
         humidity.innerHTML = showTemperature.data.main.humidity;
         wind.innerHTML = showTemperature.data.wind.speed;
         feelsLike.innerHTML = Math.round(showTemperature.data.main.feels_like);
+        weatherIcon.setAttribute(
+            "src" , `https://openweathermap.org/img/wn/${showTemperature.data.weather[0].icon}@2x.png`
+            );
+        description.innerHTML = showTemperature.data.weather[0].description;
     });
     
 }
      
-
  function locationButton() {
     function myLocation(position){
         function showCurrentLocation(temp) {
@@ -62,16 +67,17 @@ let days =
 "Friday",
  "Saturday"];
 let currentTimeWeek = document.querySelector("#weekDay");
-currentTimeWeek.innerHTML = days[now.getDay()];
 let actualMonth = now.getMonth()+1;
-let actualDay = now.getDate()
-let currentDateDay = document.querySelector("#dateDayMonth");
-currentDateDay.innerHTML = `0 ${actualDay} / 0 ${actualMonth}`;
-if (actualDay || actualMonth > 10) {
-    let currentDateDay = document.querySelector("#dateDayMonth");
-    currentDateDay.innerHTML = `${actualDay} / ${actualMonth}`;
-}
+let actualDay = now.getDate() 
 let actualHours = now.getHours();
 let actualMinutes = now.getMinutes();
 let currentHoursMinutes = document.querySelector("#actualTime");
-currentHoursMinutes.innerHTML = `${actualHours} : ${actualMinutes}0`;
+
+currentTimeWeek.innerHTML = days[now.getDay()];
+if (actualDay || actualMonth >= 10) {
+    let currentDateDay = document.querySelector("#dateDayMonth");
+    currentDateDay.innerHTML = `${actualDay} / ${actualMonth}`;
+     } else {
+currentDateDay.innerHTML = `0 ${actualDay} / 0 ${actualMonth}`;
+}
+currentHoursMinutes.innerHTML = `${actualHours} : ${actualMinutes}`;

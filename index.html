@@ -24,8 +24,9 @@
                     <h2 class="farenheit"><a href="">°F
                     </a></h2>
                   </div>
-                    <div class="col-2 current_icon">
-                    
+                    <div class="col-2 current_icon" 
+                    id="icon">
+                      <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weatherIcon"/> 
                     </div>
                         <div class="col-6 current_time">
                           <span class="week_day" id="weekDay">
@@ -38,27 +39,28 @@
                         <span class="time" id="actualTime">
                         14:00 
                         </span>
+                       
                       </div>
+                      <button class="buttonCurrentPlace" id="buttonCurrentPlace"><em>EXACT</em> LOCATION</button>
                     </div>
+                    
             <div class="col-4 current_place">
               <span class="city" id="currentCity">Pula</span>
-           
             <span class="feelsLike">Feels like<span id="feelsLike">10</span>°</span>
           
               <span class="humidity">Humidity<span id="humidity">20</span>%</span>
         
               <span class="wind">Wind Speed <span id="wind">2</span>m/s</span>
            </div>
-      <div class="col-6 search_place">
-        <h2 id="icon">  🌤 
-        </h2>
-        <div class="kurcina">
-        <button class="buttonCurrentPlace" id="buttonCurrentPlace"><em>EXACT</em> LOCATION</button>
+           <span id="description"><em>Clear sunny sky</em></span>
+
+           
+      <div class="col-4 search_place">
         <form id="inputTextCity">
           <input type="text city" placeholder="Enter a city" id="enterCity" />
           <input id="citySubmit" type="submit" class="bnt btn-primary" value="CHANGE CITY"/>
         </form>
-        </div>
+        
         </div>
       </div>
    </div>  
