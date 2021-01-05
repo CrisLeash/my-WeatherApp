@@ -29,9 +29,11 @@ function textCity(event) {
      
  function locationButton() {
     function myLocation(position){
+       
+
         function showCurrentLocation(temp) {
             let iconNumber = temp.data.weather[0].icon;
-        console.log(iconNumber);
+            console.log(iconNumber);
             document.querySelector("#currentCity").innerHTML = temp.data.name;
             document.querySelector("#humidity").innerHTML = temp.data.main.humidity;
             document.querySelector("#wind").innerHTML = temp.data.wind.speed;
@@ -51,6 +53,15 @@ function textCity(event) {
      }
      navigator.geolocation.getCurrentPosition(myLocation);
 }
+function showFarenheit(event) {
+    event.preventDefault();
+    let temp = 5;
+   let newTemp = document.querySelector("#h2Temp").innerHTML = ((temp * 9) / 5 + 32);
+    console.log(newTemp);
+}
+
+let farenheit = document.querySelector("#farenheit");
+farenheit.addEventListener("click", showFarenheit);
 
 let form = document.querySelector("#citySubmit");
     form.addEventListener("click", textCity);
