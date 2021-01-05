@@ -3,7 +3,7 @@ function textCity(event) {
     
     let cityName = document.querySelector("#enterCity");
     let showName = document.querySelector("#currentCity");
-    let temperature = document.querySelector("#h2Temp");
+    let temperatureCel = document.querySelector("#h2Temp");
     let humidity = document.querySelector("#humidity");
     let feelsLike = document.querySelector("#feelsLike");
     let wind = document.querySelector("#wind");
@@ -14,10 +14,13 @@ function textCity(event) {
     let description = document.querySelector("#description");
 
     axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature => {
+        
+        celciusTemp = showTemperature.data.main.temp;
+
         console.log(showTemperature);
         let iconNumber = showTemperature.data.weather[0].icon;
         showName.innerHTML = showTemperature.data.name;
-        temperature.innerHTML = Math.round(showTemperature.data.main.temp);
+        temperatureCel.innerHTML = Math.round(celciusTemp);
         humidity.innerHTML = showTemperature.data.main.humidity;
         wind.innerHTML = showTemperature.data.wind.speed;
         feelsLike.innerHTML = Math.round(showTemperature.data.main.feels_like);
@@ -39,7 +42,7 @@ function textCity(event) {
             document.querySelector("#wind").innerHTML = temp.data.wind.speed;
             document.querySelector("#feelsLike").innerHTML = (Math.round(temp.data.main.feels_like));
             document.querySelector("#h2Temp").innerHTML = (Math.round(temp.data.main.temp));
-            document.querySelector("#icon").innerHTML = ("src" , `http://openweathermap.org/img/wn/${iconNumber}@2x.png`);
+            document.querySelector("#icon").innerHTML = weatherIcon.setAttribute("src" , `http://openweathermap.org/img/wn/${iconNumber}@2x.png`);
         }
         
         let lat = (position.coords.latitude);
@@ -55,16 +58,22 @@ function textCity(event) {
 }
 function showFarenheit(event) {
     event.preventDefault();
-    let temp = 5;
-   let newTemp = document.querySelector("#h2Temp").innerHTML = ((temp * 9) / 5 + 32);
-    console.log(newTemp);
+    let showTemp = document.querySelector("#h2Temp");
+    let farenheitTemp = ((celciusTemp * 9) / 5 + 32);
+    let feelsLikeFaren = document.querySelector("#feelsLike");
+    feelsLikeFaren.innerHTML = Math.round(farenheitTemp);
+    showTemp.innerHTML = Math.round(farenheitTemp);
 }
+
+
 
 let farenheit = document.querySelector("#farenheit");
 farenheit.addEventListener("click", showFarenheit);
 
 let form = document.querySelector("#citySubmit");
     form.addEventListener("click", textCity);
+
+let celciusTemp = null;
 
 //location coordinates button
 let maLocation = document.querySelector("#buttonCurrentPlace");
