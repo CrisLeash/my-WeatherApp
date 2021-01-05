@@ -15,12 +15,12 @@ function textCity(event) {
 
     axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature => {
         
-        celciusTemp = showTemperature.data.main.temp;
+        celsiusTemp = showTemperature.data.main.temp;
 
         console.log(showTemperature);
         let iconNumber = showTemperature.data.weather[0].icon;
         showName.innerHTML = showTemperature.data.name;
-        temperatureCel.innerHTML = Math.round(celciusTemp);
+        temperatureCel.innerHTML = Math.round(celsiusTemp);
         humidity.innerHTML = showTemperature.data.main.humidity;
         wind.innerHTML = showTemperature.data.wind.speed;
         feelsLike.innerHTML = Math.round(showTemperature.data.main.feels_like);
@@ -32,7 +32,6 @@ function textCity(event) {
      
  function locationButton() {
     function myLocation(position){
-       
 
         function showCurrentLocation(temp) {
             let iconNumber = temp.data.weather[0].icon;
@@ -42,6 +41,7 @@ function textCity(event) {
             document.querySelector("#wind").innerHTML = temp.data.wind.speed;
             document.querySelector("#feelsLike").innerHTML = (Math.round(temp.data.main.feels_like));
             document.querySelector("#h2Temp").innerHTML = (Math.round(temp.data.main.temp));
+            document.querySelector("#description").innerHTML = temp.data.weather[0].description;
             document.querySelector("#icon").innerHTML = weatherIcon.setAttribute("src" , `http://openweathermap.org/img/wn/${iconNumber}@2x.png`);
         }
         
@@ -59,21 +59,26 @@ function textCity(event) {
 function showFarenheit(event) {
     event.preventDefault();
     let showTemp = document.querySelector("#h2Temp");
-    let farenheitTemp = ((celciusTemp * 9) / 5 + 32);
-    let feelsLikeFaren = document.querySelector("#feelsLike");
-    feelsLikeFaren.innerHTML = Math.round(farenheitTemp);
+    let farenheitTemp = ((celsiusTemp * 9) / 5 + 32);
     showTemp.innerHTML = Math.round(farenheitTemp);
 }
 
+function showCelsius(event) {
+    event.preventDefault();
+    let showTemp = document.querySelector("#h2Temp");
+    showTemp.innerHTML = Math.round(celsiusTemp);
+}
 
+let celsiusTemp = null;
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", showCelsius);
 
 let farenheit = document.querySelector("#farenheit");
 farenheit.addEventListener("click", showFarenheit);
 
 let form = document.querySelector("#citySubmit");
     form.addEventListener("click", textCity);
-
-let celciusTemp = null;
 
 //location coordinates button
 let maLocation = document.querySelector("#buttonCurrentPlace");
@@ -100,20 +105,4 @@ let currentDateDay = document.querySelector("#dateDayMonth");
 currentTimeWeek.innerHTML = days[now.getDay()];
 currentDateDay.innerHTML = `${actualDay >= 10 ? actualDay : '0' + actualDay} / ${actualMonth >= 10 ? actualMonth : '0' + actualMonth}`;
 currentHoursMinutes.innerHTML = `${actualHours >= 10 ? actualHours : `0` + actualHours} : ${actualMinutes >= 10 ? actualMinutes : `0` + actualMinutes}`;
-// if (actualDay >= 10) {
-//     currentDateDay.innerHTML = `${actualDay} / ${actualMonth}`;
-// } else {
-//     currentDateDay.innerHTML = `0 ${actualDay} / ${actualMonth}`;
-// }
 
-// if(actualMonth >= 10) {
-//     currentDateDay.innerHTML = `${actualDay} / ${actualMonth}`;
-// } else {
-//     currentDateDay.innerHTML = `${actualDay} / 0 ${actualMonth}`;
-// }
-
-
-
-// let farenheit = document.querySelector("#farenheit");
-   //    addEventListener("click", showFarenheit);
-    
